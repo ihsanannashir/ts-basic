@@ -1,17 +1,7 @@
-"use strict";
 //tsc sandbox.ts for manual compiling
 //tsc sandbox.ts -w for auto compiling
 //tsc -w for auto compiling all
-class Invoice {
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    format() {
-        return `${this.client} owes $${this.amount} for ${this.details}`;
-    }
-}
+import { Invoice } from "./classes/Invoice.js";
 const invOne = new Invoice('mario', 'work on the mario website', 250);
 const invTwo = new Invoice('luigi', 'work on the luigi website', 300);
 let invoices = [];
