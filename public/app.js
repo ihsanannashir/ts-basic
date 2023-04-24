@@ -3,10 +3,10 @@
 //tsc sandbox.ts -w for auto compiling
 //tsc -w for auto compiling all
 class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     format() {
         return `${this.client} owes $${this.amount} for ${this.details}`;
@@ -17,10 +17,9 @@ const invTwo = new Invoice('luigi', 'work on the luigi website', 300);
 let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-invOne.client = 'yoshi';
-invTwo.amount = 400;
-console.log(invoices);
-console.log(invOne, invTwo);
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format());
+});
 const form = document.querySelector('.new-item-form');
 // inputs
 const type = document.querySelector('#type');
